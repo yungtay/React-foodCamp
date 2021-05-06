@@ -131,6 +131,29 @@ margin-bottom: 5px;
   color: #FFFFFF;
 }
 
+.preco-quantidade{
+  display:flex;
+  justify-content: space-between;
+}
+
+.quantidade{
+  width:47px;
+  justify-content: space-between;
+  display:none;
+}
+
+.borda .quantidade{
+display:flex;
+}
+
+.vermelha{
+  color:#CF2B2B;
+}
+
+.verde{
+  color: #51B72F;
+}
+
 .borda{
   border: 5px solid #51B72F;
   padding: 9px 9px;
