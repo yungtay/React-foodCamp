@@ -1,29 +1,29 @@
 export default function ConfirmarPedido() {
     return (
-      <div class="tela-confirmar-pedido escondido">
-        <div class="confirmar-pedido">
-          <div class="container-texto">
+      <div className="tela-confirmar-pedido escondido">
+        <div className="confirmar-pedido">
+          <div className="container-texto">
             <span>Confirme o seu pedido</span>
-            <div class="item">
-              <span class="item1"></span>
-              <span class="preco1"></span>
+            <div className="item">
+              <span className="item1"></span>
+              <span className="preco1"></span>
             </div>
-            <div class="item">
-              <span class="item2"></span>
-              <span class="preco2"></span>
+            <div className="item">
+              <span className="item2"></span>
+              <span className="preco2"></span>
             </div>
-            <div class="item">
-              <span class="item3"></span>
-              <span class="preco3"></span>
+            <div className="item">
+              <span className="item3"></span>
+              <span className="preco3"></span>
             </div>
-            <div class="total">
+            <div className="total">
               <span>TOTAL</span>
-              <span class="precoTotal"></span>
+              <span className="precoTotal"></span>
             </div>
-            <div class="pedir" onclick="nomeEnderecoPedir()">
+            <div className="pedir" onClick="nomeEnderecoPedir()">
               <buttom>Tudo certo, pode pedir!</buttom>
             </div>
-            <buttom class="cancelar" onclick="cancelar()">
+            <buttom className="cancelar" onClick="cancelar()">
               Cancelar
             </buttom>
           </div>

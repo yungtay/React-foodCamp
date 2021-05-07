@@ -1,15 +1,17 @@
 import ReactDOM from "react-dom"
+import React from "react"
 import Topo from "./Topo"
 import Cardapio from "./Cardapio"
 import ConfirmarPedido from "./ConfirmarPedido"
 
  export default function App() {
+    const [comboEscolhido, setComboEscolhido] = React.useState([{id: 0, data:[]},{id: 1, data:[]},{id: 2, data:[]}]);
     return (
-      <div class="corpo-total">
+      <div className="corpo-total">
         <ConfirmarPedido />
-        <div class="antes-confirmar">
+        <div className="antes-confirmar">
           <Topo />
-          <Cardapio />
+          <Cardapio comboEscolhido={comboEscolhido} setComboEscolhido={setComboEscolhido}/>
         </div>
       </div>
     );

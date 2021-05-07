@@ -1,16 +1,51 @@
+import React from "react"
 import ComboRefeicao from "./ComboRefeicao";
 import OpcoesCombo from "./OpcoesCombo";
 import FecharPedido from "./FecharPedido"
 
-export default function Cardapio() {
-    return (
-      <div class="conteudo">
-        {refeicao.map(p => (
-          <ComboRefeicao texto={p.texto} item={p.item}/>
-        ))}
-        <FecharPedido/>
-      </div>
-    );
+export default function Cardapio(props) {
+  const  {comboEscolhido,setComboEscolhido} = props
+  const refeicao = [
+    {
+      texto: "Primeiro, seu prato",
+      item: (
+        <OpcoesCombo
+          opcao={opcaoPratos}
+          combo={[comboEscolhido, setComboEscolhido]}
+          id={0}
+        />
+      ),
+    },
+    {
+      texto: "Agora, sua bebida",
+      item: (
+        <OpcoesCombo
+          opcao={opcaoBebidas}
+          combo={[comboEscolhido, setComboEscolhido]}
+          id={1}
+        />
+      ),
+    },
+    {
+      texto: "Por fim, sua sobremesa",
+      item: (
+        <OpcoesCombo
+          opcao={opcaoSobremesas}
+          combo={[comboEscolhido, setComboEscolhido]}
+          id={2}
+        />
+      ),
+    },
+  ];
+
+  return (
+    <div className="conteudo">
+      {refeicao.map((p) => (
+        <ComboRefeicao texto={p.texto} item={p.item}/>
+      ))}
+      <FecharPedido comboEscolhido={comboEscolhido} />
+    </div>
+  );
 }
 
 
@@ -84,11 +119,4 @@ const opcaoSobremesas = [
     descricao: "Sorvete de todos os sabores",
     preco: "11,10",
   },
-];
-
-
-const refeicao = [
-  { texto: "Primeiro, seu prato", item: <OpcoesCombo opcao={opcaoPratos}/> },
-  { texto: "Agora, sua bebida", item: <OpcoesCombo opcao={opcaoBebidas}/> },
-  { texto: "Por fim, sua sobremesa", item: <OpcoesCombo opcao={opcaoSobremesas}/>}
 ];

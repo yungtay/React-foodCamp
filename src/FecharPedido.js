@@ -1,8 +1,10 @@
-export default function FecharPedido() {
+export default function FecharPedido(props) {
+  const {comboEscolhido} = props
+  console.log(comboEscolhido)
     return (
-      <div class="fechar-pedido">
-        <div class="selecionar-fechar disable" onclick="avancarConfirmacao()">
-          <buttom class="texto-fechamento">
+      <div className="fechar-pedido">
+        <div className="selecionar-fechar disable" onClick="avancarConfirmacao()">
+          <buttom className="texto-fechamento">
             Selecione os 3 itens para fechar o pedido
           </buttom>
         </div>
