@@ -41,5 +41,5 @@ function nomeEnderecoPedir(comboEscolhido) {
 
   console.log(decodeURIComponent(url));
 
-  //window.location.replace(`https://wa.me/5521988563381?text=${url}`);
+  window.location.replace(`https://wa.me/5521988563381?text=${url}`);
 }
