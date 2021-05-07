@@ -15,6 +15,7 @@ export default function OpcoesCombo(props) {
           i={i}
           id={id}
           combo = {combo}
+          key={i}
         />
       ))}
     </div>

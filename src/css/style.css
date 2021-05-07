@@ -101,7 +101,7 @@ height: 61px;
 display: flex;
 justify-content: center;
 align-items: center;
-background: #CBCBCB;
+background: #32B72F;
 border-radius: 50px;
 padding: 0 20%;
 }
@@ -220,8 +220,9 @@ font-weight: 400;
   opacity: 0.1;
 }
 
-.disable{
+.desativado{
   pointer-events: none;
+  background: #CBCBCB;
 }
 
 .cancelar{

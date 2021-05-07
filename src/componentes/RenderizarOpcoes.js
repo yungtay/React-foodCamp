@@ -23,8 +23,8 @@ export default function RenderizarOpcoes(props) {
             onClick={() => subtracao(quantidade, setQuantidade, selecionado,setSelecionado, i, comboEscolhido,setComboEscolhido,id)}
           >
             -
-          </span>{" "}
-          {quantidade}{" "}
+          </span>
+          {quantidade}
           <span className="verde" onClick={() => soma(quantidade, setQuantidade, selecionado,setSelecionado, i, comboEscolhido,setComboEscolhido,id)}>
             +
           </span>
@@ -36,10 +36,8 @@ export default function RenderizarOpcoes(props) {
 
 function elementoClicado(setSelecionado, selecionado, key, nome, preco, quantidade,comboEscolhido, id, setComboEscolhido) {
     if(!selecionado.map((p) => p.key).includes(key)){
-      setSelecionado([...selecionado,{key: key, nome: nome, preco: preco, quantidade: quantidade}])
       selecionado = [...selecionado,{key: key, nome: nome, preco: preco, quantidade: quantidade}]
-      comboEscolhido[id].data = selecionado
-      setComboEscolhido([...comboEscolhido])
+      inserirCombo(selecionado,setSelecionado,comboEscolhido, setComboEscolhido, id)
 
     }
   }
@@ -52,7 +50,8 @@ function elementoClicado(setSelecionado, selecionado, key, nome, preco, quantida
   
   function subtracao(quantidade, setQuantidade, selecionado,setSelecionado, key, comboEscolhido,setComboEscolhido,id){
     if(quantidade === 1){
-      setSelecionado(selecionado.filter((p) => p.key !== key))
+      selecionado = selecionado.filter((p) => p.key !== key)
+      inserirCombo(selecionado,setSelecionado,comboEscolhido, setComboEscolhido, id)
     }else{
       operacao(quantidade, setQuantidade, selecionado,setSelecionado, key,"subtracao",comboEscolhido,setComboEscolhido,id)
     }  
@@ -69,7 +68,11 @@ function elementoClicado(setSelecionado, selecionado, key, nome, preco, quantida
       setQuantidade(quantidade-1)
       selecionado.filter((t) => (t.key === key))[0].quantidade--
     }
-    setSelecionado = [...selecionado]
+    inserirCombo(selecionado,setSelecionado,comboEscolhido, setComboEscolhido, id)
+  }
+
+  function inserirCombo(selecionado,setSelecionado,comboEscolhido, setComboEscolhido, id) {
+    setSelecionado(selecionado)
     comboEscolhido[id].data = selecionado
     setComboEscolhido([...comboEscolhido])
   }

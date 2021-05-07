@@ -40,8 +40,8 @@ export default function Cardapio(props) {
 
   return (
     <div className="conteudo">
-      {refeicao.map((p) => (
-        <ComboRefeicao texto={p.texto} item={p.item}/>
+      {refeicao.map((p,i) => (
+        <ComboRefeicao texto={p.texto} item={p.item} key={i}/>
       ))}
       <FecharPedido comboEscolhido={comboEscolhido} />
     </div>
